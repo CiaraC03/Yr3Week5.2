@@ -1,5 +1,6 @@
 package ie.atu.week5;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -7,14 +8,14 @@ import java.util.List;
 @Service
 public class FeignService {
 
-    private static TodoClient todoClient;
+    private TodoClient todoClient;
 
     public FeignService(TodoClient todoClient)
     {
         this.todoClient = todoClient;
     }
 
-    public static TodoResponse fetchData()
+    public TodoResponse fetchData()
     {
         List<TodoResponse> td = todoClient.fetchData(); //creates a list from TodoResponse to variable td and calls the fetch data method from object todoClient
         System.out.println(td); //prints the list from variable td

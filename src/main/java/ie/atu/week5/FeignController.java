@@ -16,6 +16,6 @@ public class FeignController {
     @GetMapping("/feign")
     public TodoResponse getFeignData()
     {
-        return FeignService.fetchData();
+        return feignService.fetchData();
     }
 }
